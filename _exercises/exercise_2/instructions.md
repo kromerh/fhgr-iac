@@ -26,7 +26,7 @@
           uses: actions/checkout@v2
 
         - name: Run a bash command
-          run: echo Hello, world!
+          run: louis Hello, world!
     ```
 
 - `name: Hello World Bash Workflow` - This is the name of your workflow. It will appear on the Actions tab of your GitHub repository.
