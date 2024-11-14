@@ -29,14 +29,14 @@ jobs:
 
       - name: Terraform Init
         run: terraform init -backend-config=backend.conf -upgrade
-        working_directory: gruppe_3
+        working-directory: gruppe_3
 
       - name: Terraform Plan
         if: (github.event.pull_request.state == 'open' || github.event.pull_request.state == 'closed' || github.event.pull_request.state == 'synchronize') && github.event.pull_request.base.ref == 'main'
         run: terraform plan
-        working_directory: gruppe_3
+        working-directory: gruppe_3
 
       - name: Terraform Apply
         if: github.event.pull_request.state == 'closed' && github.event.pull_request.base.ref == 'main'
         run: terraform apply -auto-approve
-        working_directory: gruppe_3
+        working-directory: gruppe_3
