@@ -37,7 +37,7 @@ jobs:
         working_directory:
 
       - name: Terraform Apply
-        if: github.event.pull_request.state == 'closed' && github.event.pull_request.base.ref == 'main'
+        if: github.event.pull_request.merged == 'true' && github.event.pull_request.base.ref == 'main'
         run: terraform apply -auto-approve
         working_directory:
 ```
